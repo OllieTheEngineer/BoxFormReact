@@ -8,9 +8,13 @@ const BoxList = () => {
         setBox(box => [...box, newBox]);
     };
 
-    const removeBox = (e) => {
-    const [id] = e.target;
-    setBox(box => box.filter(e.target.remove(id)));
+    // const removeBox = (e) => {
+    // const [id] = e.target;
+    // setBox(box => box.filter(e.target.remove(id)));
+    // }
+
+    const removeBox = id => {
+        setBox(box => box.filter(boxes => boxes.id !== id));
     }
 
     const boxComponent = box.map(box => (

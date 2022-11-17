@@ -5,7 +5,7 @@ const NewBoxForm = ({newBox}) => {
     const INITIAL_STATE = {
         height: "",
         width: "",
-        backgroundColor: ""
+        background_color: "",
     }
 
     const [ formData, setFormData ] = useState(INITIAL_STATE);
@@ -45,7 +45,7 @@ const NewBoxForm = ({newBox}) => {
                     type="text"
                     name="background_color"
                     id="color"
-                    value={formData.backgroundColor}
+                    value={formData.background_color}
                     onChange={handleChange} />
 
                 <button onClick={handleSubmit}>Add Box</button>
