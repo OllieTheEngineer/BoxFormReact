@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
+import {v4 as uuid} from "uuid";
 
-const NewBoxForm = (newBox) => {
+const NewBoxForm = ({newBox}) => {
     const INITIAL_STATE = {
         height: "",
         width: "",
@@ -18,7 +19,7 @@ const NewBoxForm = (newBox) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        newBox({...formData});
+        newBox({...formData, id: uuid()});
         setFormData(INITIAL_STATE);
     }
 
@@ -47,7 +48,7 @@ const NewBoxForm = (newBox) => {
                     value={formData.backgroundColor}
                     onChange={handleChange} />
 
-                <button> Add Box</button>
+                <button onClick={handleSubmit}>Add Box</button>
             </form>
         </div>
     )
